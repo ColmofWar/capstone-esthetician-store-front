@@ -1,42 +1,105 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  /* App.css - simple development styles with navbar pinned to top */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+  :root {
+    --page-max-width: 1280px;
+    --gutter: 1rem;
+    --bg: #f7fafc;
+    --text: #111827;
+    --muted: #6b7280;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Base reset */
+  * {
+    box-sizing: border-box;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: var(--text);
+    background: var(--bg);
   }
-}
 
-.card {
-  padding: 2em;
-}
+  /* Ensure the navbar sits on top of everything */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 
-.read-the-docs {
-  color: #888;
+  /* Main page content should start below the navbar */
+  .app-container {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: calc(72px + 1rem) 1rem 2rem; /* leave room for navbar (64px) + small gap */
+  }
+
+  /* Simple header/title styles */
+  .page-header {
+    margin: 0 0 1.25rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  /* Cards and sections for development */
+  .card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(16,24,40,0.06);
+    margin-bottom: 1rem;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    flex: 1 1 240px;
+  }
+
+  /* Basic buttons and links */
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 0.85rem;
+    border-radius: 6px;
+    background: #111827;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .btn--muted {
+    background: #e6e9ee;
+    color: var(--text);
+  }
+
+  a {
+    color: #2563eb;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  /* Simple utilities */
+  .text-center { text-align: center; }
+  .visually-hidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+  /* Reduce spacing on small screens */
+  @media (max-width: 720px) {
+    .app-container { padding-top: calc(72px + 0.5rem); }
+    .page-header { font-size: 1.25rem; }
+  }
+
+  /* Development helper: center everything if needed */
+  .dev-center { display:flex; align-items:center; justify-content:center; }
+
+  /* End of App.css */
 }
