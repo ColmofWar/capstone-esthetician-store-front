@@ -1,11 +1,12 @@
 import React from "react";
 
-function Shop() {
+function Home() {
     return (
         <div>
-            <h1>Skinn Savvy's Shop</h1>
+            <h1>Welcome to the Home Page</h1>
             
         </div>
     )
 }
 
+export default Home;
